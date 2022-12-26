@@ -12,11 +12,11 @@ function NewGame() {
 		setEmailValue(e.target.value);
 	};
 	const toStartGame = () => {
-		if (emailValue !== "" && emailValue.includes("@")) navigate("/game");
+		if (emailValue !== "" && emailValue.includes("@")) navigate("/new-user");
 		return setError(true);
 	};
 	return (
-		<div className="sm:hidden text-black p-6">
+		<div className=" text-black p-6">
 			<div className="h-4 w-4 border-r-0 border-b-0 border-2 border-black -rotate-45 mb-10"></div>
 			<h3 className="font-semibold mb-4">NewGame</h3>
 			<h1 className="text-3xl font-semibold">Whom do you want to play with?</h1>

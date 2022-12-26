@@ -4,6 +4,7 @@ import GameBoard from "./pages/GameBoard";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import NewGame from "./pages/NewGame";
+import NewUser from "./pages/NewUser";
 import Register from "./pages/Register";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
 				<Route path="/home" element={<Home />}></Route>
 				<Route path="/new-game" element={<NewGame />}></Route>
 				<Route path="/game" element={<GameBoard />}></Route>
+				<Route path="/new-user" element={<NewUser />}></Route>
 			</Routes>
 		</BrowserRouter>
 	);

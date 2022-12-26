@@ -17,7 +17,7 @@ function Entry() {
 
 			<Button
 				onClick={redirectLogin}
-				className="shadow-lg mt-40 py-5"
+				className="shadow-lg mt-40 py-5 bg-yellow-300"
 				btnText="Login"
 			/>
 			<Button

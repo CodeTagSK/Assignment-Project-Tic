@@ -4,8 +4,7 @@ function Button({ btnText, className, type, onClick, ...rest }) {
 	return (
 		<button
 			className={`${className} 
-			rounded-md 
-			sm:hidden 
+			rounded-md
 			grid 
 			place-items-center 
 			w-full

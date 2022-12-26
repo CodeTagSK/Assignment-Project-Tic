@@ -9,7 +9,10 @@ const Card = () => {
 				Tanmay just made their move! It’s your turn to play now.
 			</p>
 			<p className="text-xs mb-4">9th June 2022, 3:15pm</p>
-			<Button btnText="View game" className="py-2 text-sm font-medium" />
+			<Button
+				btnText="View game"
+				className="py-2 text-sm font-medium bg-yellow-300"
+			/>
 		</div>
 	);
 };
