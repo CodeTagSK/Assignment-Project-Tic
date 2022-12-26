@@ -1,17 +1,23 @@
-import Card from "./components/Card";
-import GameBoard from "./components/GameBoard";
-import GamesList from "./components/Home";
-import Login from "./components/Login";
-import NewGame from "./components/NewGame";
-import NewUser from "./components/NewUser";
-import Register from "./components/Register";
-import CustomInput from "./elements/custom-input/CustomInput";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Entry from "./pages/Entry";
+import GameBoard from "./pages/GameBoard";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import NewGame from "./pages/NewGame";
+import Register from "./pages/Register";
 
 function App() {
 	return (
-		<>
-			<GameBoard />
-		</>
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Entry />}></Route>
+				<Route path="/login" element={<Login />}></Route>
+				<Route path="/register" element={<Register />}></Route>
+				<Route path="/home" element={<Home />}></Route>
+				<Route path="/new-game" element={<NewGame />}></Route>
+				<Route path="/game" element={<GameBoard />}></Route>
+			</Routes>
+		</BrowserRouter>
 	);
 }
 

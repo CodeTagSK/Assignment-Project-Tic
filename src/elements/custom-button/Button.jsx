@@ -1,6 +1,6 @@
 import React from "react";
 
-function Button({ btnText, className }) {
+function Button({ btnText, className, type, onClick, ...rest }) {
 	return (
 		<button
 			className={`${className} 
@@ -8,10 +8,11 @@ function Button({ btnText, className }) {
 			sm:hidden 
 			grid 
 			place-items-center 
-			w-full 
-			py-5
-			bg-yellow-300
-			 text-white font-bold`}>
+			w-full
+			 text-white font-bold`}
+			type={type}
+			onClick={onClick}
+			{...rest}>
 			{btnText}
 		</button>
 	);

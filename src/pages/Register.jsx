@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Button from "../../elements/custom-button/Button";
-import CustomInput from "../../elements/custom-input/CustomInput";
 import axios from "axios";
+import CustomInput from "../elements/custom-input/CustomInput";
+import Button from "../elements/custom-button/Button";
+import { Link } from "react-router-dom";
 
 function Register() {
 	const [name, setName] = useState("");
@@ -60,7 +61,7 @@ function Register() {
 					display: submitted ? "" : "none",
 				}}>
 				<Button
-					className="bg-green-400 text-white"
+					className="bg-green-400 text-white py-5"
 					btnText="Congratulations!!! Account created."
 				/>
 			</div>
@@ -74,7 +75,7 @@ function Register() {
 					display: error ? "" : "none",
 				}}>
 				<Button
-					className="bg-red-500 text-white"
+					className="bg-red-600 text-white py-5"
 					btnText="Please Enter all the fields"
 				/>
 			</div>
@@ -92,6 +93,7 @@ function Register() {
 					containerClass="mt-4"
 					label="Your name"
 					inputChange={nameChange}
+					type="text"
 					required
 				/>
 				<CustomInput
@@ -99,17 +101,20 @@ function Register() {
 					containerClass="mt-4"
 					label="Username"
 					inputChange={userNameChange}
+					type="text"
 					required
 				/>
 				<CustomInput
 					id="email"
 					containerClass="mt-4"
+					type="email"
 					label="Email"
 					inputChange={emailChange}
 					required
 				/>
 				<CustomInput
 					id="password"
+					type="password"
 					containerClass="mt-4"
 					label="Password"
 					inputChange={passwordChange}
@@ -122,10 +127,18 @@ function Register() {
 				<Button
 					type="submit"
 					onClick={handleSubmit}
-					className={submitted ? "bg-gray-400 mt-16" : "mt-16"}
+					className={
+						submitted ? "bg-gray-400 mt-16 py-5" : "mt-16 py-5 bg-yellow-300"
+					}
 					btnText="Register"
 				/>
 			</form>
+			<p className="text-center text-sm mt-4">
+				Already have an account?
+				<Link to="/login">
+					<span className="text-yellow-300 font-bold text-lg">Login</span>
+				</Link>
+			</p>
 		</div>
 	);
 }

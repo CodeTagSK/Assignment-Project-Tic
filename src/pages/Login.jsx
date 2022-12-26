@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import Button from "../../elements/custom-button/Button";
-import CustomInput from "../../elements/custom-input/CustomInput";
+import { Link, useNavigate } from "react-router-dom";
+
 import axios from "axios";
+import CustomInput from "../elements/custom-input/CustomInput";
+import Button from "../elements/custom-button/Button";
 
 function Login() {
-	const [name, setName] = useState("");
 	const [userName, setUserName] = useState("");
-	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [submitted, setSubmitted] = useState(false);
 	const [error, setError] = useState(false);
+
+	let navigate = useNavigate();
 
 	const userNameValue = (e) => {
 		setUserName(e.target.value);
@@ -30,6 +32,7 @@ function Login() {
 					try {
 						if (user.userName === userName && user.password === password) {
 							console.log("success");
+							navigate("/home");
 						}
 					} catch (error) {
 						setError(true);
@@ -81,12 +84,14 @@ function Login() {
 					required
 					containerClass="mt-4"
 					label="Username"
+					type="text"
 				/>
 				<CustomInput
 					inputChange={passwordValue}
 					required
 					containerClass="mt-4"
 					label="Password"
+					type="password"
 				/>
 				<div>
 					{successMessage()}
@@ -95,10 +100,16 @@ function Login() {
 				<Button
 					type="submit"
 					onClick={handleSubmit}
-					className="mt-16"
+					className="mt-16 py-5 bg-yellow-300"
 					btnText="Login"
 				/>
 			</form>
+			<p className="text-center text-sm mt-4">
+				No account?
+				<Link to="/register">
+					<span className="text-yellow-300 font-bold text-lg"> Register</span>
+				</Link>
+			</p>
 		</div>
 	);
 }
